@@ -17,6 +17,13 @@ module Apartment
 
     private
 
+      def initialize(config)
+        super
+
+        Apartment.connection_handler = ActiveRecord::ConnectionAdapters::ConnectionHandler.new
+        reset
+      end  
+
       def rescue_from
         PGError
       end
@@ -28,6 +35,7 @@ module Apartment
       def initialize(config)
         super
 
+        Apartment.establish_connection(config)
         reset
       end
 
