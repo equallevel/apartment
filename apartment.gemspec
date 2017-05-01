@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary       = %q{A Ruby gem for managing database multitenancy}
   s.description   = %q{Apartment allows Rack applications to deal with database multitenancy through ActiveRecord}
   s.email         = ["ryan@influitive.com", "brad@influitive.com"]
-  s.files         = `git ls-files`.split($/)
+#  s.files         = `git ls-files`.split($/)
   s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
