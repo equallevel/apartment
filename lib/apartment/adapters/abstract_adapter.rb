@@ -110,6 +110,9 @@ module Apartment
       #
       def reset
         Apartment.establish_connection @config
+        # The models that should use the default connection are getting set to use the tenant connection
+        # with the patch from https://github.com/influitive/apartment/pull/266
+        process_excluded_models
       end
 
       #   Load the rails seed file into the db
